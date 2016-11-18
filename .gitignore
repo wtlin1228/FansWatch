@@ -1,1 +1,4 @@
 /config
+/spec/fixtures
+/Gemfile.lock
+
