@@ -10,10 +10,16 @@ FB_RESPONSE = YAML.load(File.read('spec/fixtures/fb_response.yml'))
 RESULTS = YAML.load(File.read('spec/fixtures/results.yml'))
 
 describe 'FansWatch specifications' do
+  before do 
+    @fb_api = FansWatch::FbApi.new(
+      client_id: CREDENTIALS[:client_id],
+      client_secret: CREDENTIALS[:client_secret]
+    )
+  end
+
   it 'should be able to open a Facebook Page' do
     page = FansWatch::Page.new(
-      client_id: CREDENTIALS[:client_id],
-      client_secret: CREDENTIALS[:client_secret],
+      @fb_api,
       page_id: CREDENTIALS[:page_id]
     )
 
@@ -22,8 +28,7 @@ describe 'FansWatch specifications' do
 
   it 'should get the lastest feed from an page' do
     page = FansWatch::Page.new(
-      client_id: CREDENTIALS[:client_id],
-      client_secret: CREDENTIALS[:client_secret],
+      @fb_api,
       page_id: CREDENTIALS[:page_id]
     )
 
@@ -33,8 +38,7 @@ describe 'FansWatch specifications' do
 
   it 'should get the information about postings on the feed' do
     page = FansWatch::Page.new(
-      client_id: CREDENTIALS[:client_id],
-      client_secret: CREDENTIALS[:client_secret],
+      @fb_api,
       page_id: CREDENTIALS[:page_id]
     )
 
@@ -44,8 +48,7 @@ describe 'FansWatch specifications' do
 
   it 'should find attachments in postings' do
     page = FansWatch::Page.new(
-      client_id: CREDENTIALS[:client_id],
-      client_secret: CREDENTIALS[:client_secret],
+      @fb_api,
       page_id: CREDENTIALS[:page_id]
     )
 
