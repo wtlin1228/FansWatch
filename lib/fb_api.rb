@@ -20,7 +20,7 @@ results[:access_token] = access_token
 # Find desired fan page:
 #  requires page_id: use 3rd party site
 page_id = '159425621565'
-page_response = HTTP.get("http://graph.facebook.com/v2.8/#{page_id}",
+page_response = HTTP.get("https://graph.facebook.com/v2.8/#{page_id}",
 													params: { access_token: access_token})
 fb_response[:page] = page_response
 page = JSON.load(page_response.to_s)
