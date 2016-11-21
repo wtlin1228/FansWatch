@@ -1,5 +1,5 @@
 desc 'run tests' 
 task :spec do 
-  sh 'ruby spec/facegroup_spec.rb' 
+  sh 'ruby spec/fanswatch_spec.rb' 
 end
 
