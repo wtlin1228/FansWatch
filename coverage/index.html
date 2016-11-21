@@ -5,7 +5,7 @@
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <script src='./assets/0.10.0/application.js' type='text/javascript'></script>    
     <link href='./assets/0.10.0/application.css' media='screen, projection, print' rel='stylesheet' type='text/css'>
-    <link rel="shortcut icon" type="image/png" href="./assets/0.10.0/favicon_red.png" />
+    <link rel="shortcut icon" type="image/png" href="./assets/0.10.0/favicon_green.png" />
     <link rel="icon" type="image/png" href="./assets/0.10.0/favicon.png" />
   </head>
   
@@ -14,27 +14,27 @@
       <img src="./assets/0.10.0/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2016-11-20T22:47:47-08:00">2016-11-20T22:47:47-08:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2016-11-21T00:44:50-08:00">2016-11-21T00:44:50-08:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
         <div class="file_list_container" id="AllFiles">
   <h2>
     <span class="group_name">All Files</span>
-    (<span class="covered_percent"><span class="red">57.69%</span></span>
+    (<span class="covered_percent"><span class="green">100.0%</span></span>
      covered at
      <span class="covered_strength">
-       <span class="red">
-         0.78
+       <span class="green">
+         6.96
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
-    <b>3</b> files in total.
-    <b>52</b> relevant lines. 
-    <span class="green"><b>30</b> lines covered</span> and
-    <span class="red"><b>22</b> lines missed </span>
+    <b>4</b> files in total.
+    <b>73</b> relevant lines. 
+    <span class="green"><b>73</b> lines covered</span> and
+    <span class="red"><b>0</b> lines missed </span>
   </div>
   <table class="file_list">
     <thead>
@@ -51,33 +51,43 @@
     <tbody>
       
       <tr>
-        <td class="strong"><a href="#ebb6861030beaf8b01b691a29bbc993ab42c9f6a" class="src_link" title="lib/fb_api.rb">lib/fb_api.rb</a></td>
-        <td class="red strong">70.83 %</td>
-        <td>50</td>
-        <td>24</td>
-        <td>17</td>
+        <td class="strong"><a href="#c8d4c2a7e589ab602503dda7faf8ecf018d00f8e" class="src_link" title="lib/attachment.rb">lib/attachment.rb</a></td>
+        <td class="green strong">100.0 %</td>
+        <td>13</td>
         <td>7</td>
-        <td>1.1</td>
+        <td>7</td>
+        <td>0</td>
+        <td>1.0</td>
+      </tr>
+      
+      <tr>
+        <td class="strong"><a href="#ebb6861030beaf8b01b691a29bbc993ab42c9f6a" class="src_link" title="lib/fb_api.rb">lib/fb_api.rb</a></td>
+        <td class="green strong">100.0 %</td>
+        <td>58</td>
+        <td>27</td>
+        <td>27</td>
+        <td>0</td>
+        <td>1.8</td>
       </tr>
       
       <tr>
         <td class="strong"><a href="#1d043e24c6879a7aa872479b436db6560bbb4c55" class="src_link" title="lib/page.rb">lib/page.rb</a></td>
-        <td class="red strong">46.67 %</td>
-        <td>29</td>
-        <td>15</td>
-        <td>7</td>
-        <td>8</td>
-        <td>0.5</td>
+        <td class="green strong">100.0 %</td>
+        <td>32</td>
+        <td>17</td>
+        <td>17</td>
+        <td>0</td>
+        <td>4.6</td>
       </tr>
       
       <tr>
         <td class="strong"><a href="#f3bfaf90882fd791eb66f683f09d598b502f9936" class="src_link" title="lib/posting.rb">lib/posting.rb</a></td>
-        <td class="red strong">46.15 %</td>
-        <td>25</td>
-        <td>13</td>
-        <td>6</td>
-        <td>7</td>
-        <td>0.5</td>
+        <td class="green strong">100.0 %</td>
+        <td>37</td>
+        <td>22</td>
+        <td>22</td>
+        <td>0</td>
+        <td>17.0</td>
       </tr>
       
     </tbody>
@@ -96,14 +106,110 @@
     
       <div class="source_files">
       
+        <div class="source_table" id="c8d4c2a7e589ab602503dda7faf8ecf018d00f8e">
+  <div class="header">
+    <h3>lib/attachment.rb</h3>
+    <h4><span class="green">100.0 %</span> covered</h4>
+    <div>
+      <b>7</b> relevant lines. 
+      <span class="green"><b>7</b> lines covered</span> and
+      <span class="red"><b>0</b> lines missed.</span>
+    </div>
+  </div>
+  
+  <pre>
+    <ol>
+      
+        <li class="covered" data-hits="1" data-linenumber="1">
+          <span class="hits">1</span>
+          
+          <code class="ruby">module FansWatch </code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="2">
+          
+          
+          <code class="ruby"># Attached URL to Posting </code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="3">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  class Attachment </code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="4">
+          <span class="hits">1</span>
+          
+          <code class="ruby">	  attr_reader :description, :url </code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="5">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="6">
+          <span class="hits">1</span>
+          
+          <code class="ruby">	  def initialize(data) </code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="7">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      return unless data </code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="8">
+          <span class="hits">1</span>
+          
+          <code class="ruby">	  	@description = data[&#39;description&#39;] </code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="9">
+          <span class="hits">1</span>
+          
+          <code class="ruby">	  	@url = data[&#39;url&#39;] </code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="10">
+          
+          
+          <code class="ruby">	  end </code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="11">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="12">
+          
+          
+          <code class="ruby">	 end </code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="13">
+          
+          
+          <code class="ruby">end </code>
+        </li>
+      
+    </ol>
+  </pre>
+</div>
+      
         <div class="source_table" id="ebb6861030beaf8b01b691a29bbc993ab42c9f6a">
   <div class="header">
     <h3>lib/fb_api.rb</h3>
-    <h4><span class="red">70.83 %</span> covered</h4>
+    <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>24</b> relevant lines. 
-      <span class="green"><b>17</b> lines covered</span> and
-      <span class="red"><b>7</b> lines missed.</span>
+      <b>27</b> relevant lines. 
+      <span class="green"><b>27</b> lines covered</span> and
+      <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
   
@@ -248,8 +354,8 @@
           <code class="ruby">    def page_info(page_id)</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="24">
-          
+        <li class="covered" data-hits="3" data-linenumber="24">
+          <span class="hits">3</span>
           
           <code class="ruby">      page_response = HTTP.get(fb_resource_url(page_id), </code>
         </li>
@@ -260,8 +366,8 @@
           <code class="ruby">                               params: { access_token: @access_token})</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="26">
-          
+        <li class="covered" data-hits="3" data-linenumber="26">
+          <span class="hits">3</span>
           
           <code class="ruby">      JSON.load(page_response.to_s)</code>
         </li>
@@ -284,8 +390,8 @@
           <code class="ruby">    def page_feed(page_id)</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="30">
-          
+        <li class="covered" data-hits="2" data-linenumber="30">
+          <span class="hits">2</span>
           
           <code class="ruby">      feed_response = HTTP.get(URI.join(fb_resource_url(page_id), &#39;feed&#39;),</code>
         </li>
@@ -296,8 +402,8 @@
           <code class="ruby">                               params: { access_token: @access_token})</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="32">
-          
+        <li class="covered" data-hits="2" data-linenumber="32">
+          <span class="hits">2</span>
           
           <code class="ruby">      JSON.load(feed_response.to_s)[&#39;data&#39;]</code>
         </li>
@@ -320,8 +426,8 @@
           <code class="ruby">    def posting_attachments(posting_id)</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="36">
-          
+        <li class="covered" data-hits="1" data-linenumber="36">
+          <span class="hits">1</span>
           
           <code class="ruby">      attachments_response = </code>
         </li>
@@ -338,8 +444,8 @@
           <code class="ruby">                 params: { access_token: @access_token })</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="39">
-          
+        <li class="covered" data-hits="1" data-linenumber="39">
+          <span class="hits">1</span>
           
           <code class="ruby">        JSON.load(attachments_response.to_s)[&#39;data&#39;].first</code>
         </li>
@@ -359,52 +465,100 @@
         <li class="covered" data-hits="1" data-linenumber="42">
           <span class="hits">1</span>
           
-          <code class="ruby">    private</code>
+          <code class="ruby">    def posting(posting_id) </code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="43">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="44">
+        <li class="covered" data-hits="1" data-linenumber="43">
           <span class="hits">1</span>
           
-          <code class="ruby">    def fb_resource_url(id) </code>
+          <code class="ruby">      feed_response = </code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="45">
+        <li class="never" data-hits="" data-linenumber="44">
           
           
-          <code class="ruby">      URI.join(FB_API_URL, &quot;/#{id}/&quot;) </code>
+          <code class="ruby">        HTTP.get( fb_resource_url(posting_id), </code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="46">
+        <li class="never" data-hits="" data-linenumber="45">
           
           
-          <code class="ruby">    end </code>
+          <code class="ruby">                  params: { access_token: @access_token } )</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="46">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      JSON.load(feed_response.to_s) </code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="47">
           
           
-          <code class="ruby">  </code>
+          <code class="ruby">    end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="48">
           
           
-          <code class="ruby">  end</code>
+          <code class="ruby"></code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="49">
           
           
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="50">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    private</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="51">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="52">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    def fb_resource_url(id) </code>
+        </li>
+      
+        <li class="covered" data-hits="7" data-linenumber="53">
+          <span class="hits">7</span>
+          
+          <code class="ruby">      URI.join(FB_API_URL, &quot;/#{id}/&quot;) </code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="54">
+          
+          
+          <code class="ruby">    end </code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="55">
+          
+          
+          <code class="ruby">  </code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="56">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="57">
+          
+          
           <code class="ruby">end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="50">
+        <li class="never" data-hits="" data-linenumber="58">
           
           
           <code class="ruby"></code>
@@ -417,11 +571,11 @@
         <div class="source_table" id="1d043e24c6879a7aa872479b436db6560bbb4c55">
   <div class="header">
     <h3>lib/page.rb</h3>
-    <h4><span class="red">46.67 %</span> covered</h4>
+    <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>15</b> relevant lines. 
-      <span class="green"><b>7</b> lines covered</span> and
-      <span class="red"><b>8</b> lines missed.</span>
+      <b>17</b> relevant lines. 
+      <span class="green"><b>17</b> lines covered</span> and
+      <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
   
@@ -467,7 +621,7 @@
         <li class="covered" data-hits="1" data-linenumber="7">
           <span class="hits">1</span>
           
-          <code class="ruby">    attr_reader :access_token, :name</code>
+          <code class="ruby">    attr_reader :name</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="8">
@@ -479,124 +633,142 @@
         <li class="covered" data-hits="1" data-linenumber="9">
           <span class="hits">1</span>
           
-          <code class="ruby">    def initialize(fb_api, page_id:) </code>
+          <code class="ruby">    def initialize(fb_api, data:) </code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="10">
-          
+        <li class="covered" data-hits="3" data-linenumber="10">
+          <span class="hits">3</span>
           
           <code class="ruby">      @fb_api = fb_api</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="11">
+        <li class="covered" data-hits="3" data-linenumber="11">
+          <span class="hits">3</span>
           
-          
-          <code class="ruby">      page = @fb_api.page_info(page_id)</code>
+          <code class="ruby">      @name = data[&#39;name&#39;] </code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="12">
+        <li class="covered" data-hits="3" data-linenumber="12">
+          <span class="hits">3</span>
           
-          
-          <code class="ruby">      @name = page[&#39;name&#39;] </code>
+          <code class="ruby">      @id = data[&#39;id&#39;] </code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="13">
-          
-          
-          <code class="ruby">      @id = page[&#39;id&#39;] </code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="14">
+        <li class="never" data-hits="" data-linenumber="13">
           
           
           <code class="ruby">    end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="15">
+        <li class="never" data-hits="" data-linenumber="14">
           
           
           <code class="ruby">    </code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="16">
+        <li class="covered" data-hits="1" data-linenumber="15">
           <span class="hits">1</span>
           
           <code class="ruby">    def feed </code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="17">
-          
+        <li class="covered" data-hits="2" data-linenumber="16">
+          <span class="hits">2</span>
           
           <code class="ruby">      return @feed if @feed</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="18">
-          
+        <li class="covered" data-hits="2" data-linenumber="17">
+          <span class="hits">2</span>
           
           <code class="ruby">      raw_feed = @fb_api.page_feed(@id)</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="19">
+        <li class="covered" data-hits="2" data-linenumber="18">
+          <span class="hits">2</span>
           
-          
-          <code class="ruby">      @feed = raw_feed.map do |p| </code>
+          <code class="ruby">      @feed = raw_feed.map do |posting| </code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="20">
-          
+        <li class="covered" data-hits="50" data-linenumber="19">
+          <span class="hits">50</span>
           
           <code class="ruby">        FansWatch::Posting.new( </code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="21">
+        <li class="never" data-hits="" data-linenumber="20">
           
           
           <code class="ruby">          @fb_api,</code>
         </li>
       
+        <li class="never" data-hits="" data-linenumber="21">
+          
+          
+          <code class="ruby">          data: posting</code>
+        </li>
+      
         <li class="never" data-hits="" data-linenumber="22">
-          
-          
-          <code class="ruby">          id: p[&#39;id&#39;], </code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="23">
-          
-          
-          <code class="ruby">          message: p[&#39;message&#39;], </code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="24">
-          
-          
-          <code class="ruby">          created_time: p[&#39;created_time&#39;] </code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="25">
           
           
           <code class="ruby">        ) </code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="26">
+        <li class="never" data-hits="" data-linenumber="23">
           
           
           <code class="ruby">      end </code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="27">
+        <li class="never" data-hits="" data-linenumber="24">
           
           
           <code class="ruby">    end </code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="28">
+        <li class="never" data-hits="" data-linenumber="25">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="26">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    def self.find(fb_api, id:)</code>
+        </li>
+      
+        <li class="covered" data-hits="3" data-linenumber="27">
+          <span class="hits">3</span>
+          
+          <code class="ruby">      page_data = fb_api.page_info(id)</code>
+        </li>
+      
+        <li class="covered" data-hits="3" data-linenumber="28">
+          <span class="hits">3</span>
+          
+          <code class="ruby">      new(fb_api, data: page_data)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="29">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="30">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="31">
           
           
           <code class="ruby">  end </code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="29">
+        <li class="never" data-hits="" data-linenumber="32">
           
           
           <code class="ruby">end</code>
@@ -609,11 +781,11 @@
         <div class="source_table" id="f3bfaf90882fd791eb66f683f09d598b502f9936">
   <div class="header">
     <h3>lib/posting.rb</h3>
-    <h4><span class="red">46.15 %</span> covered</h4>
+    <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>13</b> relevant lines. 
-      <span class="green"><b>6</b> lines covered</span> and
-      <span class="red"><b>7</b> lines missed.</span>
+      <b>22</b> relevant lines. 
+      <span class="green"><b>22</b> lines covered</span> and
+      <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
   
@@ -626,145 +798,217 @@
           <code class="ruby">require_relative &#39;fb_api&#39;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="2">
+        <li class="covered" data-hits="1" data-linenumber="2">
+          <span class="hits">1</span>
+          
+          <code class="ruby">require_relative &#39;attachment&#39;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="3">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="3">
+        <li class="covered" data-hits="1" data-linenumber="4">
           <span class="hits">1</span>
           
           <code class="ruby">module FansWatch </code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="4">
+        <li class="never" data-hits="" data-linenumber="5">
           
           
           <code class="ruby">  # Single posting on group&#39;s feed </code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="5">
+        <li class="covered" data-hits="1" data-linenumber="6">
           <span class="hits">1</span>
           
           <code class="ruby">  class Posting </code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="6">
+        <li class="covered" data-hits="1" data-linenumber="7">
           <span class="hits">1</span>
           
-          <code class="ruby">    attr_reader :message, :created_time, :id, :attachment</code>
+          <code class="ruby">    attr_reader :message, :created_time, :id</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="7">
+        <li class="never" data-hits="" data-linenumber="8">
           
           
           <code class="ruby">    </code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="8">
+        <li class="covered" data-hits="1" data-linenumber="9">
           <span class="hits">1</span>
           
-          <code class="ruby">    def initialize(fb_api, id:, message:, created_time:) </code>
+          <code class="ruby">    def initialize(fb_api, data: nil) </code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="9">
-          
+        <li class="covered" data-hits="51" data-linenumber="10">
+          <span class="hits">51</span>
           
           <code class="ruby">      @fb_api = fb_api</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="10">
+        <li class="covered" data-hits="51" data-linenumber="11">
+          <span class="hits">51</span>
           
-          
-          <code class="ruby">      @id = id </code>
+          <code class="ruby">      load_data(data)</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="11">
-          
-          
-          <code class="ruby">      @message = message </code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="12">
-          
-          
-          <code class="ruby">      @created_time = created_time  </code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="13">
+        <li class="never" data-hits="" data-linenumber="12">
           
           
           <code class="ruby">    end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="14">
+        <li class="never" data-hits="" data-linenumber="13">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="15">
+        <li class="covered" data-hits="1" data-linenumber="14">
           <span class="hits">1</span>
           
           <code class="ruby">    def attachment </code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="16">
-          
+        <li class="covered" data-hits="2" data-linenumber="15">
+          <span class="hits">2</span>
           
           <code class="ruby">      return @attachment if @attachment</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="17">
+        <li class="never" data-hits="" data-linenumber="16">
           
           
           <code class="ruby">    </code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="18">
-          
+        <li class="covered" data-hits="1" data-linenumber="17">
+          <span class="hits">1</span>
           
           <code class="ruby">      attached_data = @fb_api.posting_attachments(@id) </code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="19">
+        <li class="covered" data-hits="1" data-linenumber="18">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">      @attachment = { </code>
+          <code class="ruby">      @attachment = Attachment.new(attached_data)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="20">
-          
-          
-          <code class="ruby">        description: attached_data[&#39;description&#39;], </code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="21">
-          
-          
-          <code class="ruby">        url: attached_data[&#39;url&#39;] </code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="22">
-          
-          
-          <code class="ruby">      } </code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="23">
+        <li class="never" data-hits="" data-linenumber="19">
           
           
           <code class="ruby">    end </code>
         </li>
       
+        <li class="never" data-hits="" data-linenumber="20">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="21">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    def self.find(fb_api, id:)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="22">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      posting_data = fb_api.posting(id)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="23">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      new(fb_api, data:posting_data)</code>
+        </li>
+      
         <li class="never" data-hits="" data-linenumber="24">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="25">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="26">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    private </code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="27">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="28">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    def load_data(posting_data)</code>
+        </li>
+      
+        <li class="covered" data-hits="51" data-linenumber="29">
+          <span class="hits">51</span>
+          
+          <code class="ruby">      @id = posting_data[&#39;id&#39;]</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="30">
+          
+          
+          <code class="ruby">      # @updated_time = posting_data[&#39;updated_time&#39;] </code>
+        </li>
+      
+        <li class="covered" data-hits="51" data-linenumber="31">
+          <span class="hits">51</span>
+          
+          <code class="ruby">      @created_time = posting_data[&#39;created_time&#39;] </code>
+        </li>
+      
+        <li class="covered" data-hits="51" data-linenumber="32">
+          <span class="hits">51</span>
+          
+          <code class="ruby">      @message = posting_data[&#39;message&#39;] </code>
+        </li>
+      
+        <li class="covered" data-hits="51" data-linenumber="33">
+          <span class="hits">51</span>
+          
+          <code class="ruby">      attached = posting_data[&#39;attachment&#39;] </code>
+        </li>
+      
+        <li class="covered" data-hits="51" data-linenumber="34">
+          <span class="hits">51</span>
+          
+          <code class="ruby">      @attachment = Attachment.new(attached) if attached </code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="35">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="36">
           
           
           <code class="ruby">  end </code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="25">
+        <li class="never" data-hits="" data-linenumber="37">
           
           
           <code class="ruby">end</code>

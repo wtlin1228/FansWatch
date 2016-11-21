@@ -39,6 +39,14 @@ module FansWatch
         JSON.load(attachments_response.to_s)['data'].first
     end
 
+    def posting(posting_id) 
+      feed_response = 
+        HTTP.get( fb_resource_url(posting_id), 
+                  params: { access_token: @access_token } )
+      JSON.load(feed_response.to_s) 
+    end
+
+
     private
 
     def fb_resource_url(id) 

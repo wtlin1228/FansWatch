@@ -70,14 +70,19 @@ describe 'FansWatch specifications' do
 
 
   it 'should find all parts of a full posting' do 
-    posting = FB_RESULT['posting'] 
-    attachment = posting['attachment'].first 
-    retrieved = FaceGroup::Posting.find(@fb_api, id: posting['id'])
-    retrieved.id.must_equal posting['id'] 
-    retrieved.created_time.must_equal posting['created_time'] 
-    retrieved.message.must_equal posting['message'] 
+    posting = FB_RESULT[:feed]
+    post = posting.first
+    post_id = post['id'] 
+    attachment = FB_RESULT[:attachement].first 
+
+    retrieved = FansWatch::Posting.find(@fb_api, id: post_id.to_s)
+
+    retrieved.id.must_equal post_id 
+    retrieved.created_time.must_equal post['created_time'] 
+    retrieved.message.must_equal post['message'] 
     retrieved.attachment.wont_be_nil 
-    retrieved.attachment.description.must_equal attachment['description'] 
+    retrieved.attachment.description.must_equal attachment[1][0]['description']
+
   end 
 
 end

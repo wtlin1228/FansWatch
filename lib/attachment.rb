@@ -1,4 +1,4 @@
-module FaceGroup 
+module FansWatch 
 # Attached URL to Posting 
   class Attachment 
 	  attr_reader :description, :url 
