@@ -14,7 +14,7 @@
       <img src="./assets/0.10.0/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2016-11-21T01:03:46-08:00">2016-11-21T01:03:46-08:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2016-11-21T07:01:25-08:00">2016-11-21T07:01:25-08:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -25,15 +25,15 @@
      covered at
      <span class="covered_strength">
        <span class="green">
-         6.96
+         6.92
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
     <b>4</b> files in total.
-    <b>73</b> relevant lines. 
-    <span class="green"><b>73</b> lines covered</span> and
+    <b>74</b> relevant lines. 
+    <span class="green"><b>74</b> lines covered</span> and
     <span class="red"><b>0</b> lines missed </span>
   </div>
   <table class="file_list">
@@ -63,11 +63,11 @@
       <tr>
         <td class="strong"><a href="#ebb6861030beaf8b01b691a29bbc993ab42c9f6a" class="src_link" title="lib/fb_api.rb">lib/fb_api.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>58</td>
-        <td>27</td>
-        <td>27</td>
+        <td>63</td>
+        <td>28</td>
+        <td>28</td>
         <td>0</td>
-        <td>1.8</td>
+        <td>1.9</td>
       </tr>
       
       <tr>
@@ -207,8 +207,8 @@
     <h3>lib/fb_api.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>27</b> relevant lines. 
-      <span class="green"><b>27</b> lines covered</span> and
+      <b>28</b> relevant lines. 
+      <span class="green"><b>28</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -351,169 +351,169 @@
         <li class="covered" data-hits="1" data-linenumber="23">
           <span class="hits">1</span>
           
-          <code class="ruby">    def page_info(page_id)</code>
+          <code class="ruby">    def fb_resource(id)</code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="24">
-          <span class="hits">3</span>
+        <li class="covered" data-hits="4" data-linenumber="24">
+          <span class="hits">4</span>
           
-          <code class="ruby">      page_response = HTTP.get(fb_resource_url(page_id), </code>
+          <code class="ruby">      response = HTTP.get(</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="25">
           
           
-          <code class="ruby">                               params: { access_token: @access_token})</code>
+          <code class="ruby">        fb_resource_url(id),</code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="26">
-          <span class="hits">3</span>
+        <li class="never" data-hits="" data-linenumber="26">
           
-          <code class="ruby">      JSON.load(page_response.to_s)</code>
+          
+          <code class="ruby">        params: {access_token: @access_token })</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="27">
+        <li class="covered" data-hits="4" data-linenumber="27">
+          <span class="hits">4</span>
           
-          
-          <code class="ruby">    end</code>
+          <code class="ruby">      JSON.load(response.to_s)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="28">
           
           
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="29">
+          
+          
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="29">
+        <li class="covered" data-hits="1" data-linenumber="30">
           <span class="hits">1</span>
           
-          <code class="ruby">    def page_feed(page_id)</code>
+          <code class="ruby">    def page_info(page_id)</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="30">
-          <span class="hits">2</span>
+        <li class="covered" data-hits="3" data-linenumber="31">
+          <span class="hits">3</span>
           
-          <code class="ruby">      feed_response = HTTP.get(URI.join(fb_resource_url(page_id), &#39;feed&#39;),</code>
+          <code class="ruby">      fb_resource(page_id)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="31">
+        <li class="never" data-hits="" data-linenumber="32">
           
           
-          <code class="ruby">                               params: { access_token: @access_token})</code>
-        </li>
-      
-        <li class="covered" data-hits="2" data-linenumber="32">
-          <span class="hits">2</span>
-          
-          <code class="ruby">      JSON.load(feed_response.to_s)[&#39;data&#39;]</code>
+          <code class="ruby">    end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="33">
           
           
-          <code class="ruby">    end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="34">
-          
-          
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="35">
-          <span class="hits">1</span>
-          
-          <code class="ruby">    def posting_attachments(posting_id)</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="36">
-          <span class="hits">1</span>
-          
-          <code class="ruby">      attachments_response = </code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="37">
-          
-          
-          <code class="ruby">        HTTP.get(URI.join(fb_resource_url(posting_id), &#39;attachments&#39;), </code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="38">
-          
-          
-          <code class="ruby">                 params: { access_token: @access_token })</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="39">
-          <span class="hits">1</span>
-          
-          <code class="ruby">        JSON.load(attachments_response.to_s)[&#39;data&#39;].first</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="40">
-          
-          
-          <code class="ruby">    end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="41">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="42">
+        <li class="covered" data-hits="1" data-linenumber="34">
           <span class="hits">1</span>
           
           <code class="ruby">    def posting(posting_id) </code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="43">
+        <li class="covered" data-hits="1" data-linenumber="35">
           <span class="hits">1</span>
           
-          <code class="ruby">      feed_response = </code>
+          <code class="ruby">      fb_resource(posting_id) </code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="44">
-          
-          
-          <code class="ruby">        HTTP.get( fb_resource_url(posting_id), </code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="45">
-          
-          
-          <code class="ruby">                  params: { access_token: @access_token } )</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="46">
-          <span class="hits">1</span>
-          
-          <code class="ruby">      JSON.load(feed_response.to_s) </code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="47">
+        <li class="never" data-hits="" data-linenumber="36">
           
           
           <code class="ruby">    end</code>
         </li>
       
+        <li class="never" data-hits="" data-linenumber="37">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="38">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    def page_feed(page_id)</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="39">
+          <span class="hits">2</span>
+          
+          <code class="ruby">      feed_response = </code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="40">
+          
+          
+          <code class="ruby">      	HTTP.get(URI.join(fb_resource_url(page_id), &#39;feed&#39;),</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="41">
+          
+          
+          <code class="ruby">                 params: { access_token: @access_token })</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="42">
+          <span class="hits">2</span>
+          
+          <code class="ruby">      JSON.load(feed_response.to_s)[&#39;data&#39;]</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="43">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="44">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="45">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    def posting_attachments(posting_id)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="46">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      attachments_response = </code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="47">
+          
+          
+          <code class="ruby">        HTTP.get(URI.join(fb_resource_url(posting_id), &#39;attachments&#39;), </code>
+        </li>
+      
         <li class="never" data-hits="" data-linenumber="48">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">                 params: { access_token: @access_token })</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="49">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="50">
+        <li class="covered" data-hits="1" data-linenumber="49">
           <span class="hits">1</span>
           
-          <code class="ruby">    private</code>
+          <code class="ruby">        JSON.load(attachments_response.to_s)[&#39;data&#39;].first</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="50">
+          
+          
+          <code class="ruby">    end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="51">
@@ -522,43 +522,73 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="52">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="52">
           
-          <code class="ruby">    def fb_resource_url(id) </code>
+          
+          <code class="ruby">    </code>
         </li>
       
-        <li class="covered" data-hits="7" data-linenumber="53">
-          <span class="hits">7</span>
+        <li class="never" data-hits="" data-linenumber="53">
           
-          <code class="ruby">      URI.join(FB_API_URL, &quot;/#{id}/&quot;) </code>
+          
+          <code class="ruby"></code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="54">
           
           
-          <code class="ruby">    end </code>
+          <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="55">
+        <li class="covered" data-hits="1" data-linenumber="55">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">  </code>
+          <code class="ruby">    private</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="56">
           
           
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="57">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    def fb_resource_url(id) </code>
+        </li>
+      
+        <li class="covered" data-hits="7" data-linenumber="58">
+          <span class="hits">7</span>
+          
+          <code class="ruby">      URI.join(FB_API_URL, &quot;/#{id}/&quot;) </code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="59">
+          
+          
+          <code class="ruby">    end </code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="60">
+          
+          
+          <code class="ruby">  </code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="61">
+          
+          
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="57">
+        <li class="never" data-hits="" data-linenumber="62">
           
           
           <code class="ruby">end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="58">
+        <li class="never" data-hits="" data-linenumber="63">
           
           
           <code class="ruby"></code>

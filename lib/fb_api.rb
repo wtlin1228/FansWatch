@@ -20,15 +20,25 @@ module FansWatch
       @access_token = JSON.load(access_token_response.to_s)['access_token'] 
     end
 
+    def fb_resource(id)
+      response = HTTP.get(
+        fb_resource_url(id),
+        params: {access_token: @access_token })
+      JSON.load(response.to_s)
+    end
+
     def page_info(page_id)
-      page_response = HTTP.get(fb_resource_url(page_id), 
-                               params: { access_token: @access_token})
-      JSON.load(page_response.to_s)
+      fb_resource(page_id)
+    end
+
+    def posting(posting_id) 
+      fb_resource(posting_id) 
     end
 
     def page_feed(page_id)
-      feed_response = HTTP.get(URI.join(fb_resource_url(page_id), 'feed'),
-                               params: { access_token: @access_token})
+      feed_response = 
+      	HTTP.get(URI.join(fb_resource_url(page_id), 'feed'),
+                 params: { access_token: @access_token })
       JSON.load(feed_response.to_s)['data']
     end
 
@@ -39,12 +49,7 @@ module FansWatch
         JSON.load(attachments_response.to_s)['data'].first
     end
 
-    def posting(posting_id) 
-      feed_response = 
-        HTTP.get( fb_resource_url(posting_id), 
-                  params: { access_token: @access_token } )
-      JSON.load(feed_response.to_s) 
-    end
+    
 
 
     private
