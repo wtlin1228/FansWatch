@@ -7,10 +7,7 @@ require 'minitest/rg'
 require 'vcr' 
 require 'webmock'
 
-require_relative '../lib/fb_api' 
-require_relative '../lib/page' 
-require_relative '../lib/posting'
-require_relative '../lib/attachment'
+require_relative '../lib/fanswatch'
 
 FIXTURES_FOLDER = 'spec/fixtures' 
 CASSETTES_FOLDER = "#{FIXTURES_FOLDER}/cassettes" 

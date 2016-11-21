@@ -14,7 +14,7 @@
       <img src="./assets/0.10.0/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2016-11-21T07:01:25-08:00">2016-11-21T07:01:25-08:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2016-11-21T07:16:35-08:00">2016-11-21T07:16:35-08:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -25,15 +25,15 @@
      covered at
      <span class="covered_strength">
        <span class="green">
-         6.92
+         6.82
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
-    <b>4</b> files in total.
-    <b>74</b> relevant lines. 
-    <span class="green"><b>74</b> lines covered</span> and
+    <b>5</b> files in total.
+    <b>76</b> relevant lines. 
+    <span class="green"><b>76</b> lines covered</span> and
     <span class="red"><b>0</b> lines missed </span>
   </div>
   <table class="file_list">
@@ -51,7 +51,17 @@
     <tbody>
       
       <tr>
-        <td class="strong"><a href="#c8d4c2a7e589ab602503dda7faf8ecf018d00f8e" class="src_link" title="lib/attachment.rb">lib/attachment.rb</a></td>
+        <td class="strong"><a href="#4fabf3b568ed0b0ef274280d2dfee8567cafd042" class="src_link" title="lib/fanswatch.rb">lib/fanswatch.rb</a></td>
+        <td class="green strong">100.0 %</td>
+        <td>2</td>
+        <td>2</td>
+        <td>2</td>
+        <td>0</td>
+        <td>3.0</td>
+      </tr>
+      
+      <tr>
+        <td class="strong"><a href="#648286cddbd94652295b8c03ae391b048486d84d" class="src_link" title="lib/fanswatch/attachment.rb">lib/fanswatch/attachment.rb</a></td>
         <td class="green strong">100.0 %</td>
         <td>13</td>
         <td>7</td>
@@ -61,7 +71,7 @@
       </tr>
       
       <tr>
-        <td class="strong"><a href="#ebb6861030beaf8b01b691a29bbc993ab42c9f6a" class="src_link" title="lib/fb_api.rb">lib/fb_api.rb</a></td>
+        <td class="strong"><a href="#a3dc7fe3a79597894585f8a0818729765ffb405f" class="src_link" title="lib/fanswatch/fb_api.rb">lib/fanswatch/fb_api.rb</a></td>
         <td class="green strong">100.0 %</td>
         <td>63</td>
         <td>28</td>
@@ -71,7 +81,7 @@
       </tr>
       
       <tr>
-        <td class="strong"><a href="#1d043e24c6879a7aa872479b436db6560bbb4c55" class="src_link" title="lib/page.rb">lib/page.rb</a></td>
+        <td class="strong"><a href="#3d70c477a2f57ec8338a1dc4522f57582d5d9be1" class="src_link" title="lib/fanswatch/page.rb">lib/fanswatch/page.rb</a></td>
         <td class="green strong">100.0 %</td>
         <td>32</td>
         <td>17</td>
@@ -81,7 +91,7 @@
       </tr>
       
       <tr>
-        <td class="strong"><a href="#f3bfaf90882fd791eb66f683f09d598b502f9936" class="src_link" title="lib/posting.rb">lib/posting.rb</a></td>
+        <td class="strong"><a href="#f44a6eaabb98ec8a8f8b0e52f1ef3ecf1f71138f" class="src_link" title="lib/fanswatch/posting.rb">lib/fanswatch/posting.rb</a></td>
         <td class="green strong">100.0 %</td>
         <td>37</td>
         <td>22</td>
@@ -106,9 +116,39 @@
     
       <div class="source_files">
       
-        <div class="source_table" id="c8d4c2a7e589ab602503dda7faf8ecf018d00f8e">
+        <div class="source_table" id="4fabf3b568ed0b0ef274280d2dfee8567cafd042">
   <div class="header">
-    <h3>lib/attachment.rb</h3>
+    <h3>lib/fanswatch.rb</h3>
+    <h4><span class="green">100.0 %</span> covered</h4>
+    <div>
+      <b>2</b> relevant lines. 
+      <span class="green"><b>2</b> lines covered</span> and
+      <span class="red"><b>0</b> lines missed.</span>
+    </div>
+  </div>
+  
+  <pre>
+    <ol>
+      
+        <li class="covered" data-hits="1" data-linenumber="1">
+          <span class="hits">1</span>
+          
+          <code class="ruby">files = Dir.glob(File.join(File.dirname(__FILE__), &#39;fanswatch/*.rb&#39;)) </code>
+        </li>
+      
+        <li class="covered" data-hits="5" data-linenumber="2">
+          <span class="hits">5</span>
+          
+          <code class="ruby">files.each { |lib| require_relative lib } </code>
+        </li>
+      
+    </ol>
+  </pre>
+</div>
+      
+        <div class="source_table" id="648286cddbd94652295b8c03ae391b048486d84d">
+  <div class="header">
+    <h3>lib/fanswatch/attachment.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
       <b>7</b> relevant lines. 
@@ -202,9 +242,9 @@
   </pre>
 </div>
       
-        <div class="source_table" id="ebb6861030beaf8b01b691a29bbc993ab42c9f6a">
+        <div class="source_table" id="a3dc7fe3a79597894585f8a0818729765ffb405f">
   <div class="header">
-    <h3>lib/fb_api.rb</h3>
+    <h3>lib/fanswatch/fb_api.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
       <b>28</b> relevant lines. 
@@ -598,9 +638,9 @@
   </pre>
 </div>
       
-        <div class="source_table" id="1d043e24c6879a7aa872479b436db6560bbb4c55">
+        <div class="source_table" id="3d70c477a2f57ec8338a1dc4522f57582d5d9be1">
   <div class="header">
-    <h3>lib/page.rb</h3>
+    <h3>lib/fanswatch/page.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
       <b>17</b> relevant lines. 
@@ -808,9 +848,9 @@
   </pre>
 </div>
       
-        <div class="source_table" id="f3bfaf90882fd791eb66f683f09d598b502f9936">
+        <div class="source_table" id="f44a6eaabb98ec8a8f8b0e52f1ef3ecf1f71138f">
   <div class="header">
-    <h3>lib/posting.rb</h3>
+    <h3>lib/fanswatch/posting.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
       <b>22</b> relevant lines. 
