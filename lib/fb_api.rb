@@ -9,6 +9,8 @@ module FansWatch
     FB_API_URL = URI.join(FB_URL, "#{API_VER}/")
     FB_TOKEN_URL = URI.join(FB_API_URL, 'oauth/access_token')
 
+    attr_reader :access_token
+
     def initialize(client_id:, client_secret:)
       access_token_response = 
       	HTTP.get(FB_TOKEN_URL,

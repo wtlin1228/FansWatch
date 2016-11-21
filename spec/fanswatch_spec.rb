@@ -1,60 +1,83 @@
 # frozen_string_literal: true 
-require 'minitest/autorun' 
-require 'minitest/rg' 
-require 'yaml'
-
-require './lib/page.rb'
-
-CREDENTIALS = YAML.load(File.read('config/credentials.yml')) 
-FB_RESPONSE = YAML.load(File.read('spec/fixtures/fb_response.yml')) 
-RESULTS = YAML.load(File.read('spec/fixtures/results.yml'))
+require_relative 'spec_helper.rb'
 
 describe 'FansWatch specifications' do
+  VCR.configure do |c|
+    c.cassette_library_dir = CASSETTES_FOLDER
+    c.hook_into :webmock
+
+    c.filter_sensitive_data('<ACCESS_TOKEN>'){CREDENTIALS[:access_token]}
+    c.filter_sensitive_data('<ACCESS_TOKEN_ESCAPED') do
+      URI.escape(CREDENTIALS[:access_token])
+    end
+    c.filter_sensitive_data('<CLIENT_ID>'){CREDENTIALS[:client_id]}
+    c.filter_sensitive_data('<CLIENT_SECRET>'){CREDENTIALS[:client_secret]}
+  end
+
   before do 
+    VCR.insert_cassette CASSETTE_FILE, record: :new_episodes
+
     @fb_api = FansWatch::FbApi.new(
       client_id: CREDENTIALS[:client_id],
       client_secret: CREDENTIALS[:client_secret]
     )
+
+    # @posting_with_msg_id = FB_RESULT['posting']['id']
   end
 
+  after do
+    VCR.eject_cassette
+  end
+
+  it 'should be able to get a new access token' do 
+    fb_api = FansWatch::FbApi.new( 
+      client_id: CREDENTIALS[:client_id], 
+      client_secret: CREDENTIALS[:client_secret] 
+      )
+
+    fb_api.access_token.length.must_be :>, 0 
+  end
+
+
   it 'should be able to open a Facebook Page' do
-    page = FansWatch::Page.new(
+    page = FansWatch::Page.find(
       @fb_api,
-      page_id: CREDENTIALS[:page_id]
+      id: CREDENTIALS[:page_id]
     )
 
     page.name.length.must_be :>, 0
   end
 
   it 'should get the lastest feed from an page' do
-    page = FansWatch::Page.new(
+    page = FansWatch::Page.find(
       @fb_api,
-      page_id: CREDENTIALS[:page_id]
+      id: CREDENTIALS[:page_id]
     )
 
     feed = page.feed
-    feed.count.must_be :>, 10
+    feed.count.must_be :>, 1
   end
 
   it 'should get the information about postings on the feed' do
-    page = FansWatch::Page.new(
+    page = FansWatch::Page.find(
       @fb_api,
-      page_id: CREDENTIALS[:page_id]
+      id: CREDENTIALS[:page_id]
     )
 
     posting = page.feed.first
     posting.message.length.must_be :>, 0 
   end
 
-  it 'should find attachments in postings' do
-    page = FansWatch::Page.new(
-      @fb_api,
-      page_id: CREDENTIALS[:page_id]
-    )
 
-    posting = page.feed.first
-    posting.attachment[:url].length.must_be :>, 0
-  end
-
+  it 'should find all parts of a full posting' do 
+    posting = FB_RESULT['posting'] 
+    attachment = posting['attachment'].first 
+    retrieved = FaceGroup::Posting.find(@fb_api, id: posting['id'])
+    retrieved.id.must_equal posting['id'] 
+    retrieved.created_time.must_equal posting['created_time'] 
+    retrieved.message.must_equal posting['message'] 
+    retrieved.attachment.wont_be_nil 
+    retrieved.attachment.description.must_equal attachment['description'] 
+  end 
 
 end
