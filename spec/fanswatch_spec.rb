@@ -31,8 +31,8 @@ describe 'FansWatch specifications' do
 
   it 'should be able to get a new access token' do 
     fb_api = FansWatch::FbApi.new( 
-      client_id: CREDENTIALS[:client_id], 
-      client_secret: CREDENTIALS[:client_secret] 
+      client_id: ENV['FB_CLIENT_ID'], 
+      client_secret: ENV['FB_CLIENT_SECRET'] 
       )
 
     fb_api.access_token.length.must_be :>, 0 
@@ -42,7 +42,7 @@ describe 'FansWatch specifications' do
   it 'should be able to open a Facebook Page' do
     page = FansWatch::Page.find(
       @fb_api,
-      id: CREDENTIALS[:page_id]
+      id: ENV['FB_PAGE_ID']
     )
 
     page.name.length.must_be :>, 0
@@ -51,7 +51,7 @@ describe 'FansWatch specifications' do
   it 'should get the lastest feed from an page' do
     page = FansWatch::Page.find(
       @fb_api,
-      id: CREDENTIALS[:page_id]
+      id: ENV['FB_PAGE_ID']
     )
 
     feed = page.feed
@@ -61,7 +61,7 @@ describe 'FansWatch specifications' do
   it 'should get the information about postings on the feed' do
     page = FansWatch::Page.find(
       @fb_api,
-      id: CREDENTIALS[:page_id]
+      id: ENV['FB_PAGE_ID']
     )
 
     posting = page.feed.first

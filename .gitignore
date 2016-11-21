@@ -1,4 +1,6 @@
-/config
-/spec/fixtures
-/Gemfile.lock
+config/
+spec/fixtures
+Gemfile.lock
+coverage/
+*.gem
 

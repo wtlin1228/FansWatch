@@ -3,7 +3,7 @@
     "coverage": {
       "/home/wtlin/Documents/my_ruby_project/FansWatch/lib/fanswatch.rb": [
         1,
-        5
+        6
       ],
       "/home/wtlin/Documents/my_ruby_project/FansWatch/lib/fanswatch/posting.rb": [
         1,
@@ -124,6 +124,13 @@
         null,
         null
       ],
+      "/home/wtlin/Documents/my_ruby_project/FansWatch/lib/fanswatch/version.rb": [
+        null,
+        null,
+        1,
+        1,
+        null
+      ],
       "/home/wtlin/Documents/my_ruby_project/FansWatch/lib/fanswatch/page.rb": [
         1,
         1,
@@ -159,6 +166,6 @@
         null
       ]
     },
-    "timestamp": 1479741395
+    "timestamp": 1479744307
   }
 }
