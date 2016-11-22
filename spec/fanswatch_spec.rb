@@ -18,8 +18,8 @@ describe 'FansWatch specifications' do
     VCR.insert_cassette CASSETTE_FILE, record: :new_episodes
 
     @fb_api = FansWatch::FbApi.new(
-      client_id: CREDENTIALS[:client_id],
-      client_secret: CREDENTIALS[:client_secret]
+      client_id: ENV['FB_CLIENT_ID'],
+      client_secret: ENV['FB_CLIENT_SECRET']
     )
 
     # @posting_with_msg_id = FB_RESULT['posting']['id']

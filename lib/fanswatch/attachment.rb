@@ -7,6 +7,8 @@ module FansWatch
       return unless data 
 	  	@description = data['description'] 
 	  	@url = data['url'] 
+	  	@title = data['title']
+	  	@image_url = data['media']['image']['src']
 	  end 
 
 	 end 
