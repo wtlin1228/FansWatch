@@ -2,4 +2,6 @@
 
 ## It will provide an api for tracing the facebook's pages.
 
-## Refactor the api to class variables and class methods now.
+## Refactor the api to class variables and class methods done.
+
+## Prepare publishing fanswatch gem now.
