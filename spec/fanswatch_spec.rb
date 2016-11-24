@@ -2,27 +2,8 @@
 require_relative 'spec_helper.rb'
 
 describe 'FansWatch specifications' do
-  VCR.configure do |c|
-    c.cassette_library_dir = CASSETTES_FOLDER
-    c.hook_into :webmock
-
-    c.filter_sensitive_data('<ACCESS_TOKEN>'){CREDENTIALS[:access_token]}
-    c.filter_sensitive_data('<ACCESS_TOKEN_ESCAPED') do
-      URI.escape(CREDENTIALS[:access_token])
-    end
-    c.filter_sensitive_data('<CLIENT_ID>'){CREDENTIALS[:client_id]}
-    c.filter_sensitive_data('<CLIENT_SECRET>'){CREDENTIALS[:client_secret]}
-  end
-
   before do 
     VCR.insert_cassette CASSETTE_FILE, record: :new_episodes
-
-    @fb_api = FansWatch::FbApi.new(
-      client_id: ENV['FB_CLIENT_ID'],
-      client_secret: ENV['FB_CLIENT_SECRET']
-    )
-
-    # @posting_with_msg_id = FB_RESULT['posting']['id']
   end
 
   after do
