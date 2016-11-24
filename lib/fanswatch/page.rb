@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 require_relative 'fb_api'
 require_relative 'posting'
 
@@ -9,19 +10,9 @@ module FansWatch
     def initialize(page_data:) 
       @name = page_data['name'] 
       @id = page_data['id']
-       
+      @feed = Feed.new(feed_data: @id)
+
     end
-    
-    def feed 
-      return @feed if @feed
-      raw_feed = @fb_api.page_feed(@id)
-      @feed = raw_feed.map do |posting| 
-        FansWatch::Posting.new( 
-          @fb_api,
-          data: posting
-        ) 
-      end 
-    end 
 
     def self.find(id:)
       page_data = FbApi.page_info(id)
