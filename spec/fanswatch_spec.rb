@@ -29,60 +29,31 @@ describe 'FansWatch specifications' do
     VCR.eject_cassette
   end
 
-  it 'should be able to get a new access token' do 
-    fb_api = FansWatch::FbApi.new( 
-      client_id: ENV['FB_CLIENT_ID'], 
-      client_secret: ENV['FB_CLIENT_SECRET'] 
-      )
+  describe 'FbApi Credientials' do 
+    it '(HAPPY) should get new access token with ENV credientials' do
+      FansWatch::FbApi.access_token.length.must_be :>, 0
+    end
 
-    fb_api.access_token.length.must_be :>, 0 
+    it '(HAPPY) should get new access_token with file credientials' do
+      FansWatch::FbApi.config = { client_id: ENV['FB_CLIENT_ID'],
+                                  client_secret: ENV['FB_CLIENT_SECRET'] }
+      FansWatch::FbApi.access_token.length.must_be :>, 0                                
+    end
   end
 
+  describe 'Finding Page information' do
+    describe 'Find a page' do
+      it '(HAPPY) should be able to fine a Facebook Page with proper page ID' do
+        page = FansWatch::Page.find(id: ENV['FB_PAGE_ID'])         
 
-  it 'should be able to open a Facebook Page' do
-    page = FansWatch::Page.find(
-      @fb_api,
-      id: ENV['FB_PAGE_ID']
-    )
+        page.name.length.must_be :>, 0
+      end
 
-    page.name.length.must_be :>, 0
-  end
-
-  it 'should get the lastest feed from an page' do
-    page = FansWatch::Page.find(
-      @fb_api,
-      id: ENV['FB_PAGE_ID']
-    )
-
-    feed = page.feed
-    feed.count.must_be :>, 1
-  end
-
-  it 'should get the information about postings on the feed' do
-    page = FansWatch::Page.find(
-      @fb_api,
-      id: ENV['FB_PAGE_ID']
-    )
-
-    posting = page.feed.first
-    posting.message.length.must_be :>, 0 
-  end
-
-
-  it 'should find all parts of a full posting' do 
-    posting = FB_RESULT[:feed]
-    post = posting.first
-    post_id = post['id'] 
-    attachment = FB_RESULT[:attachement].first 
-
-    retrieved = FansWatch::Posting.find(@fb_api, id: post_id.to_s)
-
-    retrieved.id.must_equal post_id 
-    retrieved.created_time.must_equal post['created_time'] 
-    retrieved.message.must_equal post['message'] 
-    retrieved.attachment.wont_be_nil 
-    retrieved.attachment.description.must_equal attachment[1][0]['description']
-
+      it '(SAD) should return nil Page ID is invalid' do
+        page = FansWatch::Page.find(id: INVALID_PAGE_ID)         
+        page.must_be_nil
+      end
+    end
   end 
 
 end

@@ -23,3 +23,5 @@ if File.file?('config/credentials.yml')
   ENV['FB_ACCESS_TOKEN'] = credentials[:access_token] 
   ENV['FB_PAGE_ID'] = credentials[:page_id] 
 end
+
+INVALID_PAGE_ID = 'error_page_id'

@@ -4,12 +4,12 @@ require_relative 'posting'
 module FansWatch 
   # Main class to setup a Facebook group 
   class Page 
-    attr_reader :name
+    attr_reader :name, :id, :feed
 
-    def initialize(fb_api, data:) 
-      @fb_api = fb_api
-      @name = data['name'] 
-      @id = data['id'] 
+    def initialize(page_data:) 
+      @name = page_data['name'] 
+      @id = page_data['id']
+       
     end
     
     def feed 
@@ -23,9 +23,9 @@ module FansWatch
       end 
     end 
 
-    def self.find(fb_api, id:)
-      page_data = fb_api.page_info(id)
-      new(fb_api, data: page_data)
+    def self.find(id:)
+      page_data = FbApi.page_info(id)
+      page_data.include?('error') ? nil : new(page_data: page_data)
     end
 
   end 
