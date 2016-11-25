@@ -3,8 +3,6 @@
 $LOAD_PATH.unshift File.join(File.dirname(__FILE__), *%w(.. lib))
 require 'fanswatch'
 
-puts ENV['FB_CLIENT_ID']
-
 page_id = ARGV[0] || ENV['FB_PAGE_ID']
 unless page_id
   puts 'USAGE: fanswatch [page_id]'
