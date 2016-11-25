@@ -1,5 +1,6 @@
 config/
-spec/fixtures
+spec/fixtures/cassettes
+spec/fixtures/fb_response.yml
 Gemfile.lock
 coverage/
 *.gem
