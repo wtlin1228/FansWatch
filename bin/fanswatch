@@ -1,0 +1,23 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+$LOAD_PATH.unshift File.join(File.dirname(__FILE__), *%w(.. lib))
+require 'fanswatch'
+
+puts ENV['FB_CLIENT_ID']
+
+page_id = ARGV[0] || ENV['FB_PAGE_ID']
+unless page_id
+  puts 'USAGE: fanswatch [page_id]'
+  exit(1)
+end
+
+page = FansWatch::Page.find(id: page_id)
+
+puts page.name
+puts Array.new(page.name.length) { '-' }.join
+page.feed.postings.first(3).each.with_index do |post, index|
+  print "#{index + 1}: "
+  puts post.message ? post.message : '(blank)'
+  puts "Attached: #{post.attachment.url}" if post.attachment
+  puts
+end
