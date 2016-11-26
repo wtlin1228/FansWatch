@@ -1,6 +1,4 @@
 # frozen_string_literal: true
-require 'codeclimate-test-reporter'
-CodeClimate::TestReporter.start
 require 'simplecov' 
 SimpleCov.start
 
@@ -43,5 +41,4 @@ VCR.configure do |c|
   c.filter_sensitive_data('<CLIENT_ID>') { ENV['FB_CLIENT_ID'] }
   c.filter_sensitive_data('<CLIENT_SECRET>') { ENV['FB_CLIENT_SECRET'] }
 
-  c.ignore_hosts 'codeclimate.com'
 end
