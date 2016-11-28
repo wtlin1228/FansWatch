@@ -1,7 +1,7 @@
 module FansWatch 
 # Attached URL to Posting 
   class Attachment 
-	  attr_reader :description, :url 
+	  attr_reader :description, :url, :title, :image_url 
 
 	  def initialize(data) 
       return unless data 
