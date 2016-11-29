@@ -13,8 +13,6 @@ require_relative '../lib/fanswatch'
 FIXTURES_FOLDER = 'spec/fixtures' 
 CASSETTES_FOLDER = "#{FIXTURES_FOLDER}/cassettes" 
 CASSETTE_FILE = 'facebook_api' 
-RESULT_FILE = "#{FIXTURES_FOLDER}/results.yml" 
-FB_RESULT = YAML.load(File.read(RESULT_FILE))
 
 if File.file?('config/credentials.yml') 
   credentials = YAML.load(File.read('config/credentials.yml')) 
@@ -24,6 +22,8 @@ if File.file?('config/credentials.yml')
   ENV['FB_PAGE_ID'] = credentials[:page_id] 
 end
 
+RESULT_FILE = "#{FIXTURES_FOLDER}/results.yml" 
+FB_RESULT = YAML.load(File.read(RESULT_FILE))
 INVALID_PAGE_ID = 'error_page_id'
 
 VCR.configure do |c|
