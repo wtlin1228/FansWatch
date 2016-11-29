@@ -39,6 +39,19 @@ module FansWatch
                   client_secret: ENV['FB_CLIENT_SECRET'] }
     end
 
+    # Get page_id by url
+    #   ex:  http "https://graph.facebook.com/v2.8/cyberbuzz? 
+    #          access_token=1311663858901254|UhNPeFDGUdXZVJwagwNxBK49t-4"
+    #
+    #        {
+    #            "id": "159425621565",
+    #            "name": "Inside 硬塞的網路趨勢觀察"
+    #        }
+    def self.page_id(url)
+      fb_page_name = url.split('/')[3]
+      response = fb_resource(fb_page_name)
+      return response['id']
+    end
 
     # Get the fans page's name and id
     #   ex: @id="159425621565",
