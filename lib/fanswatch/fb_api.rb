@@ -12,8 +12,8 @@ module FansWatch
     def initialize(client_id:, client_secret:)
       access_token_response = 
       	HTTP.get(FB_TOKEN_URL,
-      					 params: { client_id: client_id,
-      										 client_secret: client_secret,
+      					 params: { client_id: ENV['FB_CLIENT_ID'],
+      										 client_secret: ENV['FB_CLIENT_SECRET'],
       										 grant_type: 'client_credentials' })
       @access_token = JSON.load(access_token_response.to_s)['access_token'] 
     end
@@ -23,8 +23,8 @@ module FansWatch
 
       access_token_response =
         HTTP.get(FB_TOKEN_URL,
-                 params: { client_id: config[:client_id],
-                           client_secret: config[:client_secret],
+                 params: { client_id: ENV['FB_CLIENT_ID'],
+                           client_secret: ENV['FB_CLIENT_SECRET'],
                            grant_type: 'client_credentials' })
       @access_token = access_token_response.parse['access_token']
     end
