@@ -74,4 +74,12 @@ describe 'FansWatch specifications' do
     end
   end        
 
+  describe 'Get page id by URL' do
+    it '(HAPPY) should find page id by correct fb page URL' do
+      id = FansWatch::FbApi.page_id(HAPPY_PAGE_URL)
+      
+      id.wont_be_nil
+    end
+  end
+
 end

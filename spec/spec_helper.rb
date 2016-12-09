@@ -25,6 +25,7 @@ end
 RESULT_FILE = "#{FIXTURES_FOLDER}/results.yml" 
 FB_RESULT = YAML.load(File.read(RESULT_FILE))
 INVALID_PAGE_ID = 'error_page_id'
+HAPPY_PAGE_URL = 'https://www.facebook.com/time'
 
 VCR.configure do |c|
   c.cassette_library_dir = CASSETTES_FOLDER
